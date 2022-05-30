@@ -1,29 +1,20 @@
 # vuetify-dark-theme
 
-This template should help get you started developing with Vue 3 in Vite.
+## Issue we can't set dark theme's primary color using `setTheme`
 
-## Recommended IDE Setup
+```js
+const setPrimaryColor = color => {
+  console.log("Color: ", color)
+  themes.value.light.colors.primary = color
+  themes.value.dark.colors.primary = color
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+  setTheme('light', themes.value.light)
+  setTheme('dark', themes.value.dark)
+}
 ```
 
-### Compile and Hot-Reload for Development
+## Steps
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+1. Run the project
+2. Click on "primary" button to change the primary color to black _(You will notice button color updated to black)_
+3. Click on icon button to switch theme to dark _(Color is still the same)_
